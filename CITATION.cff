@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-title: "Agent Generation Benchmark"
+title: "Agentic Generation Benchmark"
 message: "If you use this benchmark, please cite it."
 type: dataset
 authors:
   - name: "Curify"
 url: "https://curify-ai.com/resources/agent-evaluation"
-repository-code: "https://github.com/super-inbox/agent-generation-benchmark"
+repository-code: "https://github.com/super-inbox/agentic-generation-benchmark"
 license: CC-BY-4.0
 date-released: "2026-07-29"

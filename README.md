@@ -1,4 +1,4 @@
-# Agent Generation Benchmark
+# Agentic Generation Benchmark
 
 A public benchmark for **agentic design-generation** — given a natural-language request, does the
 agent route to the right tool/template, fill the right slots, and produce a successful result
@@ -51,7 +51,7 @@ task_success = sum(r["task_success"] for r in res) / len(res)
 ## Links
 
 - Research page & findings: https://curify-ai.com/resources/agent-evaluation
-- Hugging Face dataset (mirror): `curify/agent-generation-benchmark`
+- Hugging Face dataset (mirror): `curify/agentic-generation-benchmark`
 - Catalog: `curify-datasets`
 
 ## License
@@ -62,7 +62,7 @@ Data: **CC BY 4.0** (see [`LICENSE`](LICENSE)).
 
 See [`CITATION.cff`](CITATION.cff), or:
 
-> Curify (2026). *Agent Generation Benchmark: routing / slot / task-success / multi-turn
+> Curify (2026). *Agentic Generation Benchmark: routing / slot / task-success / multi-turn
 > evaluation of agentic design generation.* https://curify-ai.com/resources/agent-evaluation
 
 ## About Curify
