@@ -1,0 +1,456 @@
+{
+  "note": "Hand-authored contract examples, not model results or new formal RFQ cases.",
+  "case": {
+    "protocol_id": "rfq-elicited-coverage-v0.3",
+    "case_id": "RFQ-MVP-EXAMPLE",
+    "synthetic": true,
+    "is_formal_dataset_case": false,
+    "opening_message": "Hi, can you help with some pictures for our shop?",
+    "initially_known_component_ids": [],
+    "fields": [
+      {
+        "field_id": "use_case",
+        "critical": true,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "use_case.purpose",
+            "value": "Taobao apparel listings"
+          }
+        ],
+        "reply": "They're for our Taobao clothing listings."
+      },
+      {
+        "field_id": "volume",
+        "critical": true,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "volume.quantity",
+            "value": {
+              "count": 500,
+              "unit": "images",
+              "period": "month"
+            }
+          }
+        ],
+        "reply": "About 500 pictures a month."
+      },
+      {
+        "field_id": "input_assets",
+        "critical": true,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "input_assets.materials",
+            "value": [
+              "model photos",
+              "garment photos"
+            ]
+          }
+        ],
+        "reply": "We have model photos and garment photos."
+      },
+      {
+        "field_id": "output",
+        "critical": true,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "output.deliverable",
+            "value": {
+              "type": "finished image files",
+              "count_per_sku": 5
+            }
+          }
+        ],
+        "reply": "We need five finished image files per SKU."
+      },
+      {
+        "field_id": "style_reference",
+        "critical": false,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "style_reference.look",
+            "value": "quiet Japanese-inspired outdoor settings"
+          }
+        ],
+        "reply": "Outdoor settings with a quiet Japanese-inspired look."
+      },
+      {
+        "field_id": "deadline",
+        "critical": false,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "deadline.timing",
+            "value": {
+              "duration": 7,
+              "unit": "days"
+            }
+          }
+        ],
+        "reply": "We need them within seven days."
+      },
+      {
+        "field_id": "budget",
+        "critical": false,
+        "availability": "known",
+        "components": [
+          {
+            "component_id": "budget.amount",
+            "value": {
+              "amount": 10,
+              "currency": "CNY",
+              "unit": "image"
+            }
+          }
+        ],
+        "reply": "Around RMB 10 per picture."
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "case_id": "RFQ-MVP-EXAMPLE",
+      "episode_id": "authored-clean",
+      "status": "scored",
+      "annotation_complete": true,
+      "turns": [
+        {
+          "round": 1,
+          "agent_message": "What will the pictures be used for?",
+          "customer_message": "They're for our Taobao clothing listings.",
+          "targets": [
+            {
+              "field_id": "use_case",
+              "request_quote": "What will the pictures be used for?"
+            }
+          ],
+          "selected_field": "use_case",
+          "disclosures": [
+            {
+              "field_id": "use_case",
+              "component_id": "use_case.purpose",
+              "correct": true,
+              "evidence_quote": "They're for our Taobao clothing listings."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 2,
+          "agent_message": "How many pictures do you need each month?",
+          "customer_message": "About 500 pictures a month.",
+          "targets": [
+            {
+              "field_id": "volume",
+              "request_quote": "How many pictures do you need each month?"
+            }
+          ],
+          "selected_field": "volume",
+          "disclosures": [
+            {
+              "field_id": "volume",
+              "component_id": "volume.quantity",
+              "correct": true,
+              "evidence_quote": "About 500 pictures a month."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 3,
+          "agent_message": "What source material do you have?",
+          "customer_message": "We have model photos and garment photos.",
+          "targets": [
+            {
+              "field_id": "input_assets",
+              "request_quote": "What source material do you have?"
+            }
+          ],
+          "selected_field": "input_assets",
+          "disclosures": [
+            {
+              "field_id": "input_assets",
+              "component_id": "input_assets.materials",
+              "correct": true,
+              "evidence_quote": "We have model photos and garment photos."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 4,
+          "agent_message": "What would you like to receive?",
+          "customer_message": "We need five finished image files per SKU.",
+          "targets": [
+            {
+              "field_id": "output",
+              "request_quote": "What would you like to receive?"
+            }
+          ],
+          "selected_field": "output",
+          "disclosures": [
+            {
+              "field_id": "output",
+              "component_id": "output.deliverable",
+              "correct": true,
+              "evidence_quote": "We need five finished image files per SKU."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 5,
+          "agent_message": "What kind of look do you like?",
+          "customer_message": "Outdoor settings with a quiet Japanese-inspired look.",
+          "targets": [
+            {
+              "field_id": "style_reference",
+              "request_quote": "What kind of look do you like?"
+            }
+          ],
+          "selected_field": "style_reference",
+          "disclosures": [
+            {
+              "field_id": "style_reference",
+              "component_id": "style_reference.look",
+              "correct": true,
+              "evidence_quote": "Outdoor settings with a quiet Japanese-inspired look."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 6,
+          "agent_message": "When do you need them?",
+          "customer_message": "We need them within seven days.",
+          "targets": [
+            {
+              "field_id": "deadline",
+              "request_quote": "When do you need them?"
+            }
+          ],
+          "selected_field": "deadline",
+          "disclosures": [
+            {
+              "field_id": "deadline",
+              "component_id": "deadline.timing",
+              "correct": true,
+              "evidence_quote": "We need them within seven days."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 7,
+          "agent_message": "What budget do you have?",
+          "customer_message": "Around RMB 10 per picture.",
+          "targets": [
+            {
+              "field_id": "budget",
+              "request_quote": "What budget do you have?"
+            }
+          ],
+          "selected_field": "budget",
+          "disclosures": [
+            {
+              "field_id": "budget",
+              "component_id": "budget.amount",
+              "correct": true,
+              "evidence_quote": "Around RMB 10 per picture."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 8,
+          "agent_message": "Thanks, that gives me the context I need.",
+          "customer_message": "Okay, thanks.",
+          "targets": [],
+          "selected_field": null,
+          "disclosures": [],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case_id": "RFQ-MVP-EXAMPLE",
+      "episode_id": "authored-leak",
+      "status": "scored",
+      "annotation_complete": true,
+      "turns": [
+        {
+          "round": 1,
+          "agent_message": "How many pictures do you need each month?",
+          "customer_message": "About 500 pictures a month. They're for our Taobao clothing listings. Around RMB 10 per picture.",
+          "targets": [
+            {
+              "field_id": "volume",
+              "request_quote": "How many pictures do you need each month?"
+            }
+          ],
+          "selected_field": "volume",
+          "disclosures": [
+            {
+              "field_id": "volume",
+              "component_id": "volume.quantity",
+              "correct": true,
+              "evidence_quote": "About 500 pictures a month."
+            },
+            {
+              "field_id": "use_case",
+              "component_id": "use_case.purpose",
+              "correct": true,
+              "evidence_quote": "They're for our Taobao clothing listings."
+            },
+            {
+              "field_id": "budget",
+              "component_id": "budget.amount",
+              "correct": true,
+              "evidence_quote": "Around RMB 10 per picture."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 2,
+          "agent_message": "What source material do you have?",
+          "customer_message": "We have model photos and garment photos.",
+          "targets": [
+            {
+              "field_id": "input_assets",
+              "request_quote": "What source material do you have?"
+            }
+          ],
+          "selected_field": "input_assets",
+          "disclosures": [
+            {
+              "field_id": "input_assets",
+              "component_id": "input_assets.materials",
+              "correct": true,
+              "evidence_quote": "We have model photos and garment photos."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 3,
+          "agent_message": "What would you like to receive?",
+          "customer_message": "We need five finished image files per SKU.",
+          "targets": [
+            {
+              "field_id": "output",
+              "request_quote": "What would you like to receive?"
+            }
+          ],
+          "selected_field": "output",
+          "disclosures": [
+            {
+              "field_id": "output",
+              "component_id": "output.deliverable",
+              "correct": true,
+              "evidence_quote": "We need five finished image files per SKU."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 4,
+          "agent_message": "What kind of look do you like?",
+          "customer_message": "Outdoor settings with a quiet Japanese-inspired look.",
+          "targets": [
+            {
+              "field_id": "style_reference",
+              "request_quote": "What kind of look do you like?"
+            }
+          ],
+          "selected_field": "style_reference",
+          "disclosures": [
+            {
+              "field_id": "style_reference",
+              "component_id": "style_reference.look",
+              "correct": true,
+              "evidence_quote": "Outdoor settings with a quiet Japanese-inspired look."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 5,
+          "agent_message": "When do you need them?",
+          "customer_message": "We need them within seven days.",
+          "targets": [
+            {
+              "field_id": "deadline",
+              "request_quote": "When do you need them?"
+            }
+          ],
+          "selected_field": "deadline",
+          "disclosures": [
+            {
+              "field_id": "deadline",
+              "component_id": "deadline.timing",
+              "correct": true,
+              "evidence_quote": "We need them within seven days."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 6,
+          "agent_message": "What budget do you have?",
+          "customer_message": "Around RMB 10 per picture.",
+          "targets": [
+            {
+              "field_id": "budget",
+              "request_quote": "What budget do you have?"
+            }
+          ],
+          "selected_field": "budget",
+          "disclosures": [
+            {
+              "field_id": "budget",
+              "component_id": "budget.amount",
+              "correct": true,
+              "evidence_quote": "Around RMB 10 per picture."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 7,
+          "agent_message": "What will the pictures be used for?",
+          "customer_message": "They're for our Taobao clothing listings.",
+          "targets": [
+            {
+              "field_id": "use_case",
+              "request_quote": "What will the pictures be used for?"
+            }
+          ],
+          "selected_field": "use_case",
+          "disclosures": [
+            {
+              "field_id": "use_case",
+              "component_id": "use_case.purpose",
+              "correct": true,
+              "evidence_quote": "They're for our Taobao clothing listings."
+            }
+          ],
+          "diagnostics": []
+        },
+        {
+          "round": 8,
+          "agent_message": "Thanks, that gives me the context I need.",
+          "customer_message": "Okay, thanks.",
+          "targets": [],
+          "selected_field": null,
+          "disclosures": [],
+          "diagnostics": []
+        }
+      ]
+    }
+  ]
+}

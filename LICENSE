@@ -7,3 +7,7 @@ indicate if changes were made.
 
 Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
 Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+The new Python code under draftbench/, tools/, and tests/ is instead licensed
+under the MIT License in LICENSE-CODE. This code exception does not change
+the license of the existing dataset or legacy image archive.

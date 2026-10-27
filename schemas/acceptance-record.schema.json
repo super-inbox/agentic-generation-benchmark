@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed requirement-to-delivery audit record; not an implemented acceptance evaluator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "requirement_id",
+    "source_turn",
+    "scope",
+    "requirement",
+    "applicability",
+    "artifacts",
+    "verdict",
+    "evidence",
+    "expert_review_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "draft-acceptance-proposal/1"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirement_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_turn": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "enum": [
+        "edit",
+        "preservation",
+        "deliverable"
+      ]
+    },
+    "requirement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "applicability": {
+      "type": "object",
+      "required": [
+        "status",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "due",
+            "deferred",
+            "blocked",
+            "uncertain"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "version"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "verdict": {
+      "enum": [
+        "pass",
+        "fail",
+        "unobserved",
+        "uncertain"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "reference",
+          "observation"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "evaluator_file_fact",
+              "model_judgment",
+              "expert_judgment",
+              "candidate_claim"
+            ]
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "expert_review_status": {
+      "enum": [
+        "not_performed",
+        "pending",
+        "completed"
+      ]
+    }
+  }
+}

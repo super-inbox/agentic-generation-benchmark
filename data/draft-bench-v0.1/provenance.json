@@ -1,0 +1,93 @@
+{
+  "release_version": "0.1.0",
+  "release_date": "2026-10-26",
+  "archive_as_of": "2026-10-23",
+  "dashboard_source_commit": "67815928a139bd2f878e1bdedf517a93f00da5ba",
+  "paper_revision": "2026-10-24",
+  "new_model_calls": 0,
+  "new_human_labels": 0,
+  "source_files": [
+    {
+      "source_id": "brief-bank/episodes",
+      "sha256": "d574a95c439110849e717b2c61940f39dc990b7c02612b3916fc5dcf5753e421",
+      "bytes": 233725
+    },
+    {
+      "source_id": "brief-bank/conditions",
+      "sha256": "7f236b84135c2e9cf64feb7fcadb6b139ab12bc94b8d1daa165b445c0b628095",
+      "bytes": 70969
+    },
+    {
+      "source_id": "dashboard/archive",
+      "sha256": "5bb88b4b778cd1b610bd14e32a18c8c79ab2364239c65075e4a7cabaf7a5d482",
+      "bytes": 2167342
+    },
+    {
+      "source_id": "dashboard/rfq",
+      "sha256": "cd2374bdcf5601ce89ea7e04fc2d525b3a2ea01e609c07dd6af134830697842b",
+      "bytes": 2407164
+    },
+    {
+      "source_id": "paper/dashboard-reconciliation",
+      "sha256": "fd46e83725bff3dad35f0a0b00376d09c096fcfbff80a759e459d083fee79e96",
+      "bytes": 70971
+    },
+    {
+      "source_id": "assets/reference-pack-v0.2/manifest",
+      "sha256": "ecaa3ddd9181a78549d9ae2da05ad049f0af67113183cffeec9517c7999dbfb9",
+      "bytes": 11344
+    },
+    {
+      "source_id": "assets/brief-bank-v0.3/manifest",
+      "sha256": "819f4079637cdb187249b44893758220f7c21db72838a75a9e97097d850ef792",
+      "bytes": 3762
+    }
+  ],
+  "transformations": [
+    "Preserve 35 authored brief contracts; rewrite condition episode_source to its portable path.",
+    "Copy all 24 verified project-owned input fixtures; assign the repository CC-BY-4.0 license and preserve upstream rights status.",
+    "Project 40 RFQ cases into separate opening-only and evaluator-only files; omit private source pointers.",
+    "Export 100 archived RFQ candidate/customer dialogues with scoring annotations; omit provider/tool logs, final summaries, and diagnostics.",
+    "Preserve archived RFQ scores; expose only numeric status/score metadata for the 301 archive protocol units.",
+    "Retain 333 observation associations to reproduce lineage counts; these are not 333 independent tasks or model runs.",
+    "Export separate historical Sol/Astra R1 score repetitions without replacing original scores."
+  ],
+  "excluded": [
+    "private credentials and local filesystem paths",
+    "raw tool traces and hidden reasoning",
+    "third-party source media",
+    "model-generated design outputs",
+    "original customer conversations",
+    "private mentor identities or decisions"
+  ],
+  "reference_code": [
+    {
+      "source_id": "rfq-v0.3/scoring.py",
+      "sha256": "9c4434a8fd1061959a686e515ec2fb715bfda1a8ae3c3165e65fe02b14e0f704"
+    },
+    {
+      "source_id": "rfq-v0.3/disclosure_policy.py",
+      "sha256": "d612d28a5ef01e1bb266eebc7a25f198a757a088ffdf81c68795084a61f8d2c5"
+    },
+    {
+      "source_id": "rfq-v0.3/rubric.json",
+      "sha256": "8faa57830c293fbafbf8a4e48a841e32db0a64464593fb1c02dc1ed371121f5a"
+    },
+    {
+      "source_id": "rfq-v0.3/test_scoring.py",
+      "sha256": "eb4f1103206d1db92ad9482471ec05d454388d7ab545f531a435f8070dd5cddd"
+    },
+    {
+      "source_id": "rfq-v0.3/examples.json",
+      "sha256": "16b9144b2b71ca48d5ae4d9a32aa0d40330b7400e6f861637939cf45dd4e06da"
+    },
+    {
+      "source_id": "rfq-v0.3/PROMPTS.en.md",
+      "sha256": "ee2c679d8f9c3125911cd38ac9ed560fb98a5cfe2af50c15d01466f1e7b64b52"
+    }
+  ],
+  "reference_code_changes": [
+    "Package-relative Python imports; test fixture path made repository-relative.",
+    "Remove private experiment-directory pointer from rubric; scoring rules unchanged."
+  ]
+}
