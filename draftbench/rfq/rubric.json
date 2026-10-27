@@ -1,0 +1,177 @@
+{
+  "protocol_id": "rfq-elicited-coverage-v0.3",
+  "version": "0.3.0",
+  "status": "protocol_contract_with_completed_model_run",
+  "research_question": "Given an underspecified customer request, which agent can recover the necessary requirements most effectively within a fixed interaction budget?",
+  "field_order": [
+    "use_case",
+    "volume",
+    "input_assets",
+    "output",
+    "style_reference",
+    "deadline",
+    "budget"
+  ],
+  "default_critical_fields": [
+    "use_case",
+    "volume",
+    "input_assets",
+    "output"
+  ],
+  "availability": [
+    "known",
+    "undecided",
+    "unknown",
+    "not_applicable"
+  ],
+  "interaction": {
+    "max_rounds": 8,
+    "checkpoints": [
+      6,
+      8
+    ],
+    "round_unit": "one agent message followed by one actual customer reply",
+    "opening_counts_as_round": false,
+    "early_stop": "carry forward actual final observed prefix; never generate synthetic replies",
+    "final_brief": "diagnostic_only_not_a_score_gate",
+    "candidate_knows_disclosure_limit": true
+  },
+  "headline_metrics": [
+    {
+      "name": "elicited_coverage_at_6",
+      "target": "agent",
+      "role": "primary",
+      "aggregation": "case_macro_mean"
+    },
+    {
+      "name": "elicited_coverage_at_8",
+      "target": "agent",
+      "role": "primary",
+      "aggregation": "case_macro_mean"
+    },
+    {
+      "name": "success_at_8",
+      "target": "agent",
+      "role": "secondary",
+      "aggregation": "successful_cases_divided_by_scored_cases"
+    },
+    {
+      "name": "leak_rate",
+      "target": "simulator",
+      "role": "independent_quality",
+      "aggregation": "sum_unique_unprompted_fields_divided_by_sum_unique_disclosed_fields"
+    }
+  ],
+  "coverage": {
+    "unit": "equally_weighted_applicable_field_with_initially_unknown_components",
+    "field_credit": [
+      0,
+      1
+    ],
+    "complete": "all predeclared initially unknown components of the field correctly disclosed",
+    "elicited": "every required new component first correctly appears after an explicit current-turn request and in the controller-selected field",
+    "observed": "every required new component correctly appears, regardless of elicitation source",
+    "opening": "exclude fully known fields from coverage denominator; preserve partial initial components",
+    "critical_opening": "a fully disclosed initial critical field is satisfied without a redundant question",
+    "uncertainty": "an explicitly elicited unknown or undecided state can satisfy a field only when that is its frozen ground truth",
+    "leak_laundering": "first-correct-disclosure provenance never changes after repetition or confirmation",
+    "empty_target_set": "reject case at dataset validation before model runs"
+  },
+  "success": {
+    "checkpoint": 8,
+    "min_elicited_coverage": 0.8,
+    "all_critical_fields": "initially_complete_or_fully_elicited",
+    "compare_unrounded_scores": true,
+    "additional_gates": [],
+    "no_handoff_confirmation_precision_or_all_legacy_required_gate": true
+  },
+  "leak": {
+    "numerator": "per-case unique fields with at least one correct, initially unknown component first disclosed without being targeted by the current agent message",
+    "denominator": "per-case unique fields with at least one correct, initially unknown component first disclosed after the opening",
+    "deduplicate_by": [
+      "case_id",
+      "field_id"
+    ],
+    "partial_disclosures_count": true,
+    "repetitions_count": false,
+    "incorrect_claims_count": false,
+    "targeted_policy_overflow_is_unprompted": false,
+    "zero_denominator": null,
+    "unresolved_disclosure_labels": "null rate until reviewed; retain certain counts and pending fields as diagnostics"
+  },
+  "simulator": {
+    "hidden_state": "structured_immutable_case_fields",
+    "max_selected_fields_per_turn": 1,
+    "selection": "first_understandable_target_in_agent_order_including_repeats_and_unknowns",
+    "generic_request_target": "use_case",
+    "no_understandable_target": "clarification_reply_without_hidden_facts",
+    "default_renderer": "preauthored_field_reply",
+    "optional_renderer": "LLM_receives_only_selected_field_reply_neutral_voice_and_public_history",
+    "full_state_visible_to_renderer": false,
+    "policy_implementation": "disclosure_policy.py",
+    "target_routing": "independent_semantic_annotation_or_frozen_router_with_evidence_spans; not candidate self-report",
+    "state_changes": "disabled_in_MVP; versioned_extension_required"
+  },
+  "episode_accounting": {
+    "statuses": [
+      "scored",
+      "infrastructure_excluded"
+    ],
+    "simulator_violations_exclude_episode": false,
+    "agent_failure_excludes_episode": false,
+    "infrastructure_excluded": [
+      "wrong_case_input",
+      "unrecoverable_missing_log",
+      "hidden_state_tool_or_system_exposure",
+      "infrastructure_interruption",
+      "unscorable_benchmark_corruption"
+    ],
+    "uncertain_component_labels": "keep episode denominator; provisional coverage/success lower bound and diagnostic upper bound",
+    "missing_annotations": "not an official zero; complete annotations before formal reporting"
+  },
+  "diagnostics_only": [
+    "observed_coverage",
+    "unprompted_disclosure_count",
+    "policy_overflow",
+    "simulator_factual_errors",
+    "unresolved_components",
+    "missing_critical_fields",
+    "naturalness",
+    "question_overload",
+    "repeated_questions",
+    "final_brief_errors",
+    "human_review_status"
+  ],
+  "composite_score": null,
+  "fairness": {
+    "freeze_per_case": [
+      "hidden_state",
+      "opening",
+      "components",
+      "critical_fields",
+      "initially_known_components",
+      "disclosure_policy",
+      "max_rounds",
+      "seed_schedule"
+    ],
+    "freeze_per_suite": [
+      "candidate_prompt",
+      "target_router",
+      "renderer_mode_and_settings",
+      "annotator",
+      "scorer",
+      "source_hashes"
+    ],
+    "paired_case_seed_repetitions": true,
+    "equal_seed_guarantees_equal_language": false,
+    "aggregation_with_repeats": "within_case_first_then_across_cases",
+    "human_review": "same_predeclared_blind_sample_across_models; no_invented_labels"
+  },
+  "historical_compatibility": {
+    "legacy_revision": "0.2.3",
+    "legacy_r_is_elicited_coverage": false,
+    "legacy_results_poolable": false,
+    "old_20_case_migration": "required_before_new_model_run",
+    "retrospective_label": "retrospective_legacy_policy"
+  }
+}

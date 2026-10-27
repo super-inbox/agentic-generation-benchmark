@@ -1,0 +1,390 @@
+{
+  "models": [
+    "historical Sol",
+    "Astra"
+  ],
+  "judge": "gemini-2.5-pro",
+  "date": "2026-09-28T03:50:27.804536+00:00",
+  "completed_pairs": 7,
+  "judge_calls": 14,
+  "varying_pairs": 3,
+  "mentor_final_approval": false,
+  "cases": [
+    {
+      "id": "AR-005",
+      "revision": "文字选优改用报告清晰度；不再要求额外图片或未告知的模拟投票标签。",
+      "sol": {
+        "original": {
+          "lower": 0.16,
+          "upper": 0.16
+        },
+        "lower": 1.0,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 1.0,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 1.0,
+            "upper": 1.0
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.68,
+          "upper": 0.68
+        },
+        "lower": 1.0,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 1.0,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 1.0,
+            "upper": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DAB-L4-CAM-001@reference_grounded",
+      "revision": "方向精修与未来渠道套件分开验收；必要澄清不等同于已完成精修。",
+      "sol": {
+        "original": {
+          "lower": 0.52,
+          "upper": 0.82
+        },
+        "lower": 0.685,
+        "upper": 0.985,
+        "order_spread_points": 3.0000000000000027,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.67,
+            "upper": 0.97
+          },
+          {
+            "order": 2,
+            "lower": 0.7,
+            "upper": 1.0
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.7,
+          "upper": 1.0
+        },
+        "lower": 0.55,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.55,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 0.55,
+            "upper": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DAB-L4-BID-001@zero_shot",
+      "revision": "固定客户反馈与实际资产状态不匹配时单列；不把同类暂停一边奖励、一边处罚。",
+      "sol": {
+        "original": {
+          "lower": 0.64,
+          "upper": 0.94
+        },
+        "lower": 0.6,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.6,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 0.6,
+            "upper": 1.0
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.4,
+          "upper": 0.7
+        },
+        "lower": 0.6,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.6,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 0.6,
+            "upper": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "DAB-L4-ECO-001@reference_grounded",
+      "revision": "城市通勤方向精修按本轮要求验收；六件套作为未来交付缺口单列。",
+      "sol": {
+        "original": {
+          "lower": 0.52,
+          "upper": 0.82
+        },
+        "lower": 0.7,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.7,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 0.7,
+            "upper": 1.0
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.7,
+          "upper": 1.0
+        },
+        "lower": 0.7,
+        "upper": 1.0,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.7,
+            "upper": 1.0
+          },
+          {
+            "order": 2,
+            "lower": 0.7,
+            "upper": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "TIQ-029",
+      "revision": "按 Logo 升级提案板验收；允许重排版，重点保留两个 Logo 的身份。",
+      "sol": {
+        "original": {
+          "lower": 0.5257405250926769,
+          "upper": 0.5257405250926769
+        },
+        "lower": 0.9872789866311384,
+        "upper": 0.9872789866311384,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.9872789866311384,
+            "upper": 0.9872789866311384
+          },
+          {
+            "order": 2,
+            "lower": 0.9872789866311384,
+            "upper": 0.9872789866311384
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.9928617814492905,
+          "upper": 0.9928617814492905
+        },
+        "lower": 0.9928617814492905,
+        "upper": 0.9928617814492905,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.9928617814492905,
+            "upper": 0.9928617814492905
+          },
+          {
+            "order": 2,
+            "lower": 0.9928617814492905,
+            "upper": 0.9928617814492905
+          }
+        ]
+      }
+    },
+    {
+      "id": "TIQ-100",
+      "revision": "按两件输入服装验收不同穿搭；去掉未告知的三方向、三图要求。",
+      "sol": {
+        "original": {
+          "lower": 0.7191553620153265,
+          "upper": 0.7191553620153265
+        },
+        "lower": 0.740583933443898,
+        "upper": 0.740583933443898,
+        "order_spread_points": 29.999999999999993,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.5905839334438979,
+            "upper": 0.5905839334438979
+          },
+          {
+            "order": 2,
+            "lower": 0.8905839334438979,
+            "upper": 0.8905839334438979
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.5838287318769121,
+          "upper": 0.5838287318769121
+        },
+        "lower": 0.9885906366388167,
+        "upper": 0.9885906366388167,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.9885906366388167,
+            "upper": 0.9885906366388167
+          },
+          {
+            "order": 2,
+            "lower": 0.9885906366388167,
+            "upper": 0.9885906366388167
+          }
+        ]
+      }
+    },
+    {
+      "id": "TIQ-085",
+      "revision": "把增强幅度、保留要求和画面质量分开；不依据缩略图声称逐像素未改。",
+      "sol": {
+        "original": {
+          "lower": 0.23076923076923078,
+          "upper": 0.23076923076923078
+        },
+        "lower": 0.8,
+        "upper": 0.8,
+        "order_spread_points": 0.0,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.8,
+            "upper": 0.8
+          },
+          {
+            "order": 2,
+            "lower": 0.8,
+            "upper": 0.8
+          }
+        ]
+      },
+      "astra": {
+        "original": {
+          "lower": 0.8461538461538461,
+          "upper": 0.8461538461538461
+        },
+        "lower": 0.9769230769230769,
+        "upper": 0.9769230769230769,
+        "order_spread_points": 4.615384615384621,
+        "repetitions": [
+          {
+            "order": 1,
+            "lower": 0.9538461538461538,
+            "upper": 0.9538461538461538
+          },
+          {
+            "order": 2,
+            "lower": 1.0,
+            "upper": 1.0
+          }
+        ]
+      }
+    }
+  ],
+  "rules": [
+    "Only candidate-visible task instructions, input assets and revealed client feedback establish requirements. Hidden quantity, format, simulation-label or layout-lock requirements cannot cause deductions unless they follow from a visible instruction or an actual false claim in the output.",
+    "Use the same dimension meanings, weights, stage rules, evidence-selection rules and anchors for both anonymous candidates. Do not see historical scores, model names, mentor's case opinions or the desired winner.",
+    "Do not use a hard gate, veto, total-score reset or score cap. Each deduction must be tied to an applicable dimension and observable evidence. The same missing edit is not automatically zero visual quality and preservation as well.",
+    "For multi-turn cases, the later explicit instruction 'Apply only the requested delta' limits that turn. A future full kit is deferred during direction refinement unless the visible turn explicitly orders its production. Record missing eventual kit assets separately; do not reward an unfinished overall project as fully delivered.",
+    "A clarification is necessary only if a material ambiguity in the available evidence prevents identifying or safely editing the target, and no requested independent subtask can safely proceed. A candidate's own assertion is insufficient. Inspect prior outputs and the current instruction.",
+    "A necessary clarification can support a high brief-understanding/decision score, but has execution status awaiting_necessary_clarification and no successful edit credit. Its unobservable revision quality is null with its weight retained as an uncertainty interval, never silently renormalized or imputed full credit.",
+    "Unnecessary clarification or refusal of an executable edit scores zero for that turn's revision outcome and is recorded as unfulfilled work. Clarifying questions cannot excuse an earlier due deliverable that the candidate failed to create.",
+    "If fixed client feedback refers to an asset or state never supplied or produced, first decide whether that asset was explicitly due in a prior visible turn. If yes, record a candidate omission; if not, record blocked_by_fixture and leave that impossible revision unscored. Never invent an edit target or score both a fabricated target and a safe pause as successful.",
+    "Judge revision_fidelity per revealed feedback turn. Null turns retain their fraction of the dimension's weight as uncertainty. Judge existing-asset consistency from observable assets; missing future deliverables are not automatically a consistency defect.",
+    "Candidate-generated prompts, scripts, verification claims and metrics are not the user brief or independent proof. Candidate clarification text may establish what was asked, not whether the stated blocker is true. File presence/hashes and original input/output images are independently supplied.",
+    "Different hashes prove different files, not successful edits. Identical file hashes prove byte identity. Do not claim pixel equality from a resized preview. Describe visible edit magnitude separately from visual polish and preservation.",
+    "Present the mean of two prespecified order-swapped judgments, both individual results and order sensitivity. If score/eligibility/status depends on presentation order, flag it for mentor; do not select whichever judgment favors a version. Original means remain historical and do not mix in this seven-case pilot."
+  ],
+  "review_notes": {
+    "author": "assistant audit of R1; not mentor final adjudication",
+    "cases": {
+      "AR-005": {
+        "finding": "两版两次均为 100 分；原来 16 → 68 的差距消失。两份报告都选 B，并给出 B > C > A > D 的相同排序。这个结果支持 mentor 指出的口径问题；100 分仍只是本轮任务规则下的 judge 结论。",
+        "next_review": "确认报告清晰度替代图像视觉质量、Markdown 可读性替代图片就绪检查，适用于此类文字选优任务。",
+        "open_gap": false
+      },
+      "DAB-L4-CAM-001@reference_grounded": {
+        "finding": "两次均确认 Sol 已完成精修、Astra 在必要澄清处暂停。Astra 的精修质量记未观测，其区间由此扩大，不再把未改图评成改稿满分。Sol 是否可以直接把“偏暗”解释为 B3，两次评语仍有分歧，导致 3 分跨度。",
+        "next_review": "看双方 v0 方向对照：Sol 的 B3 是否足够明确？Astra 的三个方向是否确实无法唯一对应？分别判定，不预设两版必须同样行动。",
+        "open_gap": true
+      },
+      "DAB-L4-BID-001@zero_shot": {
+        "finding": "两版都为 60–100；原来 24 分差消失。第 1 轮精修可观察，第 2、3 轮所需淘宝主图和门店稿不存在，按反馈与已有资产状态不匹配处理。40 分未知部分不是完成得分，最终套件仍未交付。原评语中的“设备问题”是 fixture problem 的误译；没有证据表明这些反馈是故意设置的“陷阱”。",
+        "next_review": "确认 R1 对 delta-only 的阶段解释；若 mentor 认为前一轮已经必须交全套，应同时恢复两版相同的漏交判法，并修正模拟客户的资产状态。",
+        "open_gap": false
+      },
+      "DAB-L4-ECO-001@reference_grounded": {
+        "finding": "两版都为 70–100；原来 18 分差消失。两版都完成了城市通勤方向精修，但没有完整六件套。R1 只认可本轮精修，未来交付缺口继续单列。",
+        "next_review": "确认选择方向后的这轮应只验收指定精修，还是也要求六件套；采用任何一种解释都需对两版一致。",
+        "open_gap": false
+      },
+      "TIQ-029": {
+        "finding": "两版三项质量维度均为 5/5；原来约 46.7 分差基本消失。98.7 与 99.3 的剩余差距仅来自原有耗时效率项。重新排版和中文说明不再被一边判违例、一边判满分。",
+        "next_review": "确认短 brief 要求制作提案板而非锁定原版式的局部编辑，并检查两个 Logo 的身份是否被充分保留。",
+        "open_gap": false
+      },
+      "TIQ-100": {
+        "finding": "隐藏的三方向要求已移除，两版都覆盖两件服装。Astra 两次均约 98.9；Sol 两次约 59.1 / 89.1，相差 30 分：一次将可选比较板的模糊人脸和服装问题连带扣多个维度，另一次主要扣虚构卫衣口袋。原图核对可见：Sol 卫衣新增了输入没有的口袋；额外比较板的白色渐变遮住人脸，但单衣图的人脸清楚。因此 74.1 只是算术平均，本案 R1 尚未收敛，不能作为稳定的新结论。",
+        "next_review": "并排看两张单衣海报与额外比较板：明确额外产物怎样影响整套质量，并防止同一个口袋错误自动在多个维度重复扣分。",
+        "open_gap": true
+      },
+      "TIQ-085": {
+        "finding": "Sol 两次均为 80，Astra 为 95.4 / 100。两序都认为 Astra 的金属纹理和边缘增强更明显，方向判断一致；但精修是 4 还是 5 分仍有约 4.6 分跨度。Sol 的“几乎未增强”不再机械连带把所有维度清零。",
+        "next_review": "为“有效增强”和“充分增强”确定可见锚点；检查视觉质量扣分是否仍不当地取决于增强幅度，而非画面本身。",
+        "open_gap": true
+      }
+    }
+  }
+}

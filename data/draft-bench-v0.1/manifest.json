@@ -1,0 +1,201 @@
+{
+  "release_version": "0.1.0",
+  "release_date": "2026-10-26",
+  "archive_as_of": "2026-10-23",
+  "license": "CC-BY-4.0",
+  "counts": {
+    "brief_bank_briefs": 35,
+    "brief_bank_conditions": 43,
+    "input_fixtures": 24,
+    "rfq_scenarios": 40,
+    "archive_observations": 333,
+    "archive_protocol_units": 301,
+    "archive_id_lineages": 272,
+    "historical_associations": 32,
+    "design_protocol_units": 261,
+    "rfq_run_records": 100,
+    "rfq_scored_runs": 99
+  },
+  "files": [
+    {
+      "path": "assets/brief-bank-v0.3/reddit-fixtures/australian-empty-road.png",
+      "bytes": 3471961,
+      "sha256": "905163ed293b665b56c689e49d99d776af80a1c9a20e2bdb03c41682a61e8cb8"
+    },
+    {
+      "path": "assets/brief-bank-v0.3/reddit-fixtures/australian-road-edit-mask.png",
+      "bytes": 6106,
+      "sha256": "a33d84d4635cda2a749db3ef3e87056f63336511f6d860fb748cbc3cba9f96dd"
+    },
+    {
+      "path": "assets/brief-bank-v0.3/reddit-fixtures/layout-road-sketch.png",
+      "bytes": 856801,
+      "sha256": "2999e70ef22634109c17e612012ac5e1db86f8d7acef529eeb2fa721015c799f"
+    },
+    {
+      "path": "assets/brief-bank-v0.3/reddit-fixtures/owl-shirt-client-photo.png",
+      "bytes": 2374013,
+      "sha256": "9c15eac4ada1093f478aa2496642ab4b97e998ce720f53fd82016056f7f23ba2"
+    },
+    {
+      "path": "assets/brief-bank-v0.3/reddit-fixtures/robot-speech-bubble-mask.png",
+      "bytes": 4505,
+      "sha256": "aceb733e1af33960faffcce90c817f71bc09c8d8fe4baa39cc77ed2ed73abac3"
+    },
+    {
+      "path": "assets/brief-bank-v0.3/reddit-fixtures/robot-speech-bubble-source.png",
+      "bytes": 2972861,
+      "sha256": "49e72cb26fda02196fc6c8b27e49abd7344b933846f69b5a80d2e79d7e365077"
+    },
+    {
+      "path": "assets/manifest.jsonl",
+      "bytes": 18208,
+      "sha256": "c337a75b7b265f88769c0e8be5be4b1a4c01f7c5242dbe886584d63fcb08332f"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/design-vote/mens-grooming-abcd.png",
+      "bytes": 1216397,
+      "sha256": "b4bbb640cc1941d34e156e50d74214b2d7828b4d077c0be5070cd408dea0023c"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/design-vote/noma-logo-options.png",
+      "bytes": 630253,
+      "sha256": "0985be34801ead57e9aaea756b26b06d4e44bc4c909175139c4672a3fa9fc334"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/detail-page/quiet-ritual-reference-page.png",
+      "bytes": 815623,
+      "sha256": "f941e16e01835e825f6b0a2b4d65e5d021329ae6e223b451c307998ec5a97af2"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/detail-page/terra-diffuser-product.png",
+      "bytes": 521294,
+      "sha256": "241716aa68e28a113150907d6a0c9b024f2febb7a948b3d01c55959fc032c9f0"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/factory/luna-club-sticker.png",
+      "bytes": 220853,
+      "sha256": "7956c4e5900e53317128d7733ecf0c7729be48edc9d76e5f7a13962aca5cc718"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/factory/orbit-coffee-artwork.png",
+      "bytes": 865492,
+      "sha256": "4c1e4d5aa41ea0cc4d5cac3f33f9ef3d51a4ed47b6cdb086ede6d5bd01dd9f1f"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/image-edit/poster-summer-form.png",
+      "bytes": 1388454,
+      "sha256": "4376b110d18b7edaa767e835c7f5b03f12a2c43a2265f1b65fcfeabcbdae3a1a"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/logo-upgrade/grain-glow-before-after.png",
+      "bytes": 588006,
+      "sha256": "6615b1008ae568a972d3cba9c9064adeb25efc50cf2fabedd34e3f4bcfaf6253"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/product-retouch/adjustable-wrench-source.png",
+      "bytes": 884360,
+      "sha256": "cc984fde523f96bd50606b0d8499c4c0614efb069742b1111288127d1751289f"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/product-retouch/perfume-bottle-source.png",
+      "bytes": 1208397,
+      "sha256": "5db0bf6ad57de7ea8f31030249ceb50387d2ff0d5f4d5564ee3a977b1e51b286"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/product-retouch/teal-speaker-white-bg.png",
+      "bytes": 792747,
+      "sha256": "f1c9a2c5895dfef128d4a52de1025bf8afad7cf59ca4bff0c04d5a653b392406"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/product-retouch/walnut-chair-detail.png",
+      "bytes": 1425486,
+      "sha256": "1654c4de41c7e9b9f0a2af5d70644755d4d0b281ecc257ff3e507d8d1d26d940"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/sku-system/mori-20-sku-sheet.png",
+      "bytes": 601334,
+      "sha256": "14d5de2a6b30c22784ca0a494012e25c6275452109dd4703540b1c273577f32c"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/sku-system/mori-brand-board.png",
+      "bytes": 592086,
+      "sha256": "3d1f9c3a73456539053c79ed6f6d5322db6acbce60bc416ae42c1b8a6a3e7a53"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/sku-system/tumbler-base.png",
+      "bytes": 807776,
+      "sha256": "40189e62be7b51c54e7752de041b554708feadf554c2c0d925c369310c9089e5"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/tryon/navy-bomber-jacket.png",
+      "bytes": 967320,
+      "sha256": "9bfe72395a1faee0102eb801a01e97662dd5018cac6f0e560e4a44839850001f"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/tryon/sage-hoodie.png",
+      "bytes": 1090205,
+      "sha256": "cb41beb7cb945896262dd4dc8d5c144e73974cac99a53e8725baf1a142e1c427"
+    },
+    {
+      "path": "assets/reference-pack-v0.2/tryon/synthetic-adult-selfie.png",
+      "bytes": 1329061,
+      "sha256": "8ba39bf27caf6ada4254634f8da1bd9e6f5ab182656e7fcc76c95eb7097089ac"
+    },
+    {
+      "path": "briefs/conditions.jsonl",
+      "bytes": 74098,
+      "sha256": "781173eb0198d7a6c6f1869acc74d5b98030021b89abf47d04e5acab93132321"
+    },
+    {
+      "path": "briefs/episodes.jsonl",
+      "bytes": 233725,
+      "sha256": "d574a95c439110849e717b2c61940f39dc990b7c02612b3916fc5dcf5753e421"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 3647,
+      "sha256": "baaa81f4711c2b195576de42785c36f7c2b2b16c4eb59d02fc82e5c8c985f73b"
+    },
+    {
+      "path": "results/archive_observations.jsonl",
+      "bytes": 123131,
+      "sha256": "1c82e7ada3d41c4d26f39e2858e4aeac0535a6d6feecbcaf2ba62e0385d3606b"
+    },
+    {
+      "path": "results/archive_units.jsonl",
+      "bytes": 251665,
+      "sha256": "ecce0ac633e044d7a715ad4fa8a5b394b492e21d00a846e5d79ef69e7f723560"
+    },
+    {
+      "path": "results/calibration_r1.json",
+      "bytes": 15328,
+      "sha256": "671575c840f1e5450bd83d65e73dcbf21f58eef09c6e1378a6e89a5ddb9241b9"
+    },
+    {
+      "path": "results/experiment_settings.json",
+      "bytes": 4805,
+      "sha256": "8784a605ab548dcad72151ccf3df3c474c410e8ead1231ea1bd4c8b67660d196"
+    },
+    {
+      "path": "results/rfq_episodes.jsonl",
+      "bytes": 760522,
+      "sha256": "5201840e968e387f546c9c8be9bde95d87fd906dfd39e707211a25ef1f8e251d"
+    },
+    {
+      "path": "results/rfq_scores.jsonl",
+      "bytes": 482829,
+      "sha256": "f93907da01e167ebbc25b658f4e678278ff86a7851c9995dea557f42639a11ae"
+    },
+    {
+      "path": "rfq/evaluator_cases.jsonl",
+      "bytes": 117790,
+      "sha256": "1c3cdd216e7cde1a246b52126ffb3720e7dd091601e7c33e472db3ec8270a7d3"
+    },
+    {
+      "path": "rfq/openings.jsonl",
+      "bytes": 7099,
+      "sha256": "3e08943ac65661c5d80bf25b08be9429d6d1fc57f79679a3f1821d87acdfa806"
+    }
+  ]
+}

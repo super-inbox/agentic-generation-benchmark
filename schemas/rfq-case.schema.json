@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DRAFT-Bench evaluator-side RFQ case",
+  "type": "object",
+  "required": [
+    "protocol_id",
+    "case_id",
+    "title",
+    "family",
+    "batch",
+    "opening_message",
+    "fields",
+    "initially_known_component_ids",
+    "variant",
+    "customer_data",
+    "provenance_kind"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "protocol_id": {
+      "const": "rfq-elicited-coverage-v0.3"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^RFQ-IC-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "batch": {
+      "enum": [
+        "original",
+        "extension"
+      ]
+    },
+    "opening_message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fields": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field_id",
+          "critical",
+          "availability",
+          "reply",
+          "components"
+        ],
+        "properties": {
+          "field_id": {
+            "enum": [
+              "use_case",
+              "volume",
+              "input_assets",
+              "output",
+              "style_reference",
+              "deadline",
+              "budget"
+            ]
+          },
+          "critical": {
+            "type": "boolean"
+          },
+          "availability": {
+            "enum": [
+              "known",
+              "undecided",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "reply": {
+            "type": "string",
+            "minLength": 1
+          },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "component_id",
+                "value"
+              ],
+              "properties": {
+                "component_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value": {}
+              },
+              "additionalProperties": false
+            }
+          },
+          "not_applicable_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "initially_known_component_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "variant": {
+      "type": "object"
+    },
+    "customer_data": {
+      "const": false
+    },
+    "provenance_kind": {
+      "enum": [
+        "authored_synthetic",
+        "real_scenario_grounded_authored_variant"
+      ]
+    }
+  }
+}

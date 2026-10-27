@@ -1,10 +1,12 @@
 cff-version: 1.2.0
-title: "Agentic Generation Benchmark"
-message: "If you use this benchmark, please cite it."
+message: "If you use these data or tools, please cite this version of DRAFT-Bench."
+title: "DRAFT-Bench: Design Reliability Across Feedback and Tasks"
 type: dataset
 authors:
   - name: "Curify"
-url: "https://curify-ai.com/resources/agent-evaluation"
+version: "0.1.0"
+date-released: "2026-10-26"
+url: "https://github.com/super-inbox/agentic-generation-benchmark"
 repository-code: "https://github.com/super-inbox/agentic-generation-benchmark"
 license: CC-BY-4.0
-date-released: "2026-07-29"
+abstract: "Authored design-workflow and requirement-elicitation benchmark data, project-owned input fixtures, and archived evidence for studying general-purpose agent reliability. The data release includes offline RFQ score replay; it does not supply expert acceptance labels."

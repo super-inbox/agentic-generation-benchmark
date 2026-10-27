@@ -1,0 +1,204 @@
+{
+  "archive_as_of": "2026-10-23",
+  "paper_revision": "2026-10-24",
+  "model_labels_as_recorded": {
+    "claude": "Claude Opus 5.5",
+    "astra": "GPT-6 Astra",
+    "sol": "GPT-5.6 Sol"
+  },
+  "model_label_note": "Archived configuration labels, not a claim that these are currently available public API identifiers.",
+  "rfq_models": {
+    "claude": {
+      "label": "Claude Opus 5.5 / max",
+      "model": "claude-opus-5-5",
+      "runtime": "Claude Code 2.1.299"
+    },
+    "astra": {
+      "label": "GPT-6 Astra / max",
+      "model": "gpt-6-astra",
+      "runtime": "Codex CLI 0.154.0"
+    },
+    "sol": {
+      "label": "GPT-5.6 Sol / max",
+      "model": "gpt-5.6-sol"
+    }
+  },
+  "rfq_source_settings": {
+    "original": {
+      "claude": {
+        "candidate": {
+          "runtime": "claude-code-cli",
+          "model": "claude-opus-5-5",
+          "effort": "max",
+          "timeout_seconds": 300,
+          "reasoning_effort": "max"
+        },
+        "router": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "medium",
+          "timeout_seconds": 180
+        },
+        "auditor": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "timeout_seconds": 600
+        }
+      },
+      "astra": {
+        "candidate": {
+          "model": "gpt-6-astra",
+          "reasoning_effort": "max",
+          "timeout_seconds": 300
+        },
+        "router": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "medium",
+          "timeout_seconds": 180
+        },
+        "auditor": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "timeout_seconds": 600
+        }
+      },
+      "sol": {
+        "candidate": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "max",
+          "timeout_seconds": 300
+        },
+        "router": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "medium",
+          "timeout_seconds": 180
+        },
+        "auditor": {
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "high",
+          "timeout_seconds": 600
+        }
+      }
+    },
+    "extension": {
+      "router": "gpt-6-astra / medium",
+      "auditor": "gpt-6-astra / high"
+    }
+  },
+  "rfq_attempt_policy": {
+    "original_claude": "AMENDMENT-01",
+    "original_reattempt_case_ids": [
+      "RFQ-IC-004",
+      "RFQ-IC-009",
+      "RFQ-IC-019"
+    ],
+    "extension_claude": "one formal attempt; RFQ-IC-028 remains excluded"
+  },
+  "paired_rfq_case_ids": [
+    "RFQ-IC-001",
+    "RFQ-IC-002",
+    "RFQ-IC-003",
+    "RFQ-IC-004",
+    "RFQ-IC-005",
+    "RFQ-IC-006",
+    "RFQ-IC-007",
+    "RFQ-IC-008",
+    "RFQ-IC-009",
+    "RFQ-IC-010",
+    "RFQ-IC-011",
+    "RFQ-IC-012",
+    "RFQ-IC-013",
+    "RFQ-IC-014",
+    "RFQ-IC-015",
+    "RFQ-IC-016",
+    "RFQ-IC-017",
+    "RFQ-IC-018",
+    "RFQ-IC-019",
+    "RFQ-IC-020",
+    "RFQ-IC-021",
+    "RFQ-IC-022",
+    "RFQ-IC-023",
+    "RFQ-IC-024",
+    "RFQ-IC-025",
+    "RFQ-IC-026",
+    "RFQ-IC-027",
+    "RFQ-IC-029",
+    "RFQ-IC-030",
+    "RFQ-IC-031",
+    "RFQ-IC-032",
+    "RFQ-IC-033",
+    "RFQ-IC-034",
+    "RFQ-IC-035",
+    "RFQ-IC-036",
+    "RFQ-IC-037",
+    "RFQ-IC-038",
+    "RFQ-IC-039",
+    "RFQ-IC-040"
+  ],
+  "strict_rfq_case_ids": [
+    "RFQ-IC-001",
+    "RFQ-IC-002",
+    "RFQ-IC-003",
+    "RFQ-IC-005",
+    "RFQ-IC-006",
+    "RFQ-IC-007",
+    "RFQ-IC-008",
+    "RFQ-IC-010",
+    "RFQ-IC-011",
+    "RFQ-IC-012",
+    "RFQ-IC-013",
+    "RFQ-IC-014",
+    "RFQ-IC-015",
+    "RFQ-IC-016",
+    "RFQ-IC-017",
+    "RFQ-IC-018",
+    "RFQ-IC-020",
+    "RFQ-IC-021",
+    "RFQ-IC-022",
+    "RFQ-IC-023",
+    "RFQ-IC-024",
+    "RFQ-IC-025",
+    "RFQ-IC-026",
+    "RFQ-IC-027",
+    "RFQ-IC-029",
+    "RFQ-IC-030",
+    "RFQ-IC-031",
+    "RFQ-IC-032",
+    "RFQ-IC-033",
+    "RFQ-IC-034",
+    "RFQ-IC-035",
+    "RFQ-IC-036",
+    "RFQ-IC-037",
+    "RFQ-IC-038",
+    "RFQ-IC-039",
+    "RFQ-IC-040"
+  ],
+  "extension_astra_continuation": {
+    "earlier_candidate_questions_retained": 13,
+    "sol_routed_customer_replies_retained": 1
+  },
+  "design": {
+    "conditions": 43,
+    "per_turn_timeout_seconds": 3600,
+    "candidate_repetitions": 1,
+    "claude_infrastructure_retries": 0,
+    "astra_image_generation": true,
+    "claude_image_generation": false,
+    "astra_isolation": "instruction_based_read_isolation",
+    "claude_isolation": "operating_system",
+    "judge": "gemini-2.5-pro",
+    "temperature": 0,
+    "scoring_policy": "v04-weighted-only-v1",
+    "hard_gate_veto": false,
+    "external_weighted_pass_threshold": 0.7,
+    "expert_acceptance_measured": false
+  },
+  "sol_extension_attempt": {
+    "planned": 20,
+    "scored": 0,
+    "native_calls": 64,
+    "http_429_calls": 60,
+    "actual_customer_rounds": 2,
+    "exclusion": "infrastructure_interruption",
+    "included_in_rfq_episodes": false
+  }
+}

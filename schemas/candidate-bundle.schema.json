@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DRAFT-Bench initial candidate input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "track",
+    "id",
+    "messages",
+    "assets"
+  ],
+  "properties": {
+    "format": {
+      "const": "draftbench-candidate-bundle/1"
+    },
+    "track": {
+      "enum": [
+        "design",
+        "rfq"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "messages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "enum": [
+              "system",
+              "user"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^assets/[^/]+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "input_context": {
+      "type": "array"
+    },
+    "preference_memory": {
+      "type": [
+        "object",
+        "array",
+        "null"
+      ]
+    },
+    "max_customer_rounds": {
+      "const": 8
+    }
+  }
+}
