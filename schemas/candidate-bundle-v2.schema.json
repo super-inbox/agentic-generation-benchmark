@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DRAFT-Bench complete initial design candidate input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "track",
+    "id",
+    "messages",
+    "assets",
+    "task_contract"
+  ],
+  "properties": {
+    "format": {
+      "const": "draftbench-candidate-bundle/2"
+    },
+    "track": {
+      "const": "design"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "messages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "enum": [
+              "system",
+              "user"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^assets/[^/]+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "input_context": {
+      "type": "array"
+    },
+    "preference_memory": {
+      "type": [
+        "object",
+        "array",
+        "null"
+      ]
+    },
+    "max_customer_rounds": {
+      "const": 8
+    },
+    "task_contract": {
+      "type": "object",
+      "required": [
+        "constraints",
+        "deliverables",
+        "inputs",
+        "reference_contract",
+        "structured_artifacts",
+        "edit_parameters",
+        "initial_project_state",
+        "human_checkpoints"
+      ],
+      "properties": {
+        "constraints": {
+          "type": "object"
+        },
+        "deliverables": {
+          "type": "array",
+          "minItems": 1
+        },
+        "inputs": {
+          "type": "array"
+        },
+        "reference_contract": {
+          "type": "array"
+        },
+        "structured_artifacts": {
+          "type": "array"
+        },
+        "edit_parameters": {
+          "type": "array"
+        },
+        "initial_project_state": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "human_checkpoints": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

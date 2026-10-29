@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable candidate adapter response",
+  "type": "object",
+  "required": ["message"],
+  "properties": {
+    "message": {"type": "string"},
+    "status": {"enum": ["ok", "blocked"]},
+    "done": {"type": "boolean"},
+    "artifacts": {
+      "type": "array", "maxItems": 100, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}
