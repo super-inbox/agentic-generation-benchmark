@@ -24,8 +24,9 @@ Use purposively selected disagreement cases to develop acceptance criteria, then
 
 ```sh
 python3 -m draftbench validate
+python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -v
 python3 tools/release_audit.py
 ```
 
-These commands have no model costs or network requirements. `tools/export_from_archive.py` is a maintainer tool for preparing a **new** release from source archives, not a requirement for normal users. `tools/build_manifest.py` rebuilds the checksum inventory during preparation; review data changes before publishing a new version.
+After installing dependencies, checks have no model costs or network requirements. `tools/export_from_archive.py` is a maintainer tool for preparing a **new** release from source archives, not a requirement for normal users. `tools/build_manifest.py` rebuilds the checksum inventory during preparation; review data changes before publishing a new version.

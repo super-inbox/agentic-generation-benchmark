@@ -9,6 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA = ROOT / "data" / "draft-bench-v0.1"
 
 
+def source_hashes():
+    package = Path(__file__).parent
+    return {str(p.relative_to(package)): sha256(p) for p in package.rglob("*")
+            if p.suffix in (".py", ".json", ".txt")}
+
+
 def sha256(path):
     h = hashlib.sha256()
     with path.open("rb") as stream:

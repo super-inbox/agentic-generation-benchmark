@@ -1,0 +1,3 @@
+# Offline validation/replay/prepare do not need these packages.
+Pillow>=10.4,<13
+pypdf>=5,<7

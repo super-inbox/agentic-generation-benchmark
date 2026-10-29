@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable online evaluation result (not an expert acceptance label)",
+  "type": "object",
+  "required": ["format", "track", "id", "run_sha256", "execution_status", "judge", "status", "metrics"],
+  "properties": {
+    "format": {"const": "draftbench-evaluation/0.2"},
+    "track": {"enum": ["design", "rfq"]},
+    "id": {"type": "string", "minLength": 1},
+    "run_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "execution_status": {"enum": ["running", "completed", "blocked", "timeout", "agent_error", "router_error"]},
+    "judge": {"type": "object"},
+    "status": {"enum": ["evaluated", "not_evaluated", "evaluation_error"]},
+    "metrics": {"type": ["object", "null"]},
+    "human_reviewed": {"const": false},
+    "provisional": {"const": true}
+  },
+  "allOf": [{
+    "if": {"properties": {"status": {"enum": ["not_evaluated", "evaluation_error"]}}},
+    "then": {"properties": {"metrics": {"type": "null"}}}
+  }]
+}

@@ -8,6 +8,10 @@ The intended users are agent researchers and evaluation developers. These develo
 
 ## Composition and counting
 
+Toolkit v0.2.0 (2026-10-29) adds [portable execution and API evaluation](docs/RUNNING.md) over the unchanged
+frozen data. New scores stay outside the historical archive. All 83 public tasks have bundled input definitions;
+three design tasks explicitly test missing prerequisites. Metadata-only groups are outside the runnable inventory.
+
 | Level | Count | Meaning |
 |---|---:|---|
 | Brief Bank base briefs | 35 | 24 core plus 11 public-corpus-grounded authored extensions |

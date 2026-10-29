@@ -11,7 +11,7 @@ from pathlib import Path
 from .common import ROOT, contained, read_rows, sha256, unique, write_json
 
 
-def build_request(data, track, identifier):
+def build_request(data, track, identifier, complete=False):
     if track == "rfq":
         opening = unique(read_rows(data / "rfq/openings.jsonl"), "case_id")[identifier]
         prompt = (ROOT / "draftbench/rfq/candidate_prompt.txt").read_text(encoding="utf-8")
@@ -29,13 +29,29 @@ def build_request(data, track, identifier):
         destination = "assets/" + asset["asset_id"] + source.suffix
         files.append((source, destination))
         visible_assets.append({**item, "path": destination, "sha256": asset["sha256"]})
-    return {"format": "draftbench-candidate-bundle/1", "track": "design", "id": identifier,
+    request = {"format": "draftbench-candidate-bundle/1", "track": "design", "id": identifier,
             "messages": [{"role": "user", "content": condition["query"]}],
             "input_context": condition["input_context"], "assets": visible_assets,
-            "preference_memory": condition["preference_memory"]}, files
+            "preference_memory": condition["preference_memory"]}
+    if complete:
+        episode = unique(read_rows(data / "briefs/episodes.jsonl"), "id")[condition["base_brief_id"]]
+        visible_ids = {i["id"] for i in condition["input_context"]}
+        request["format"] = "draftbench-candidate-bundle/2"
+        request["task_contract"] = {
+            "constraints": episode["constraints"], "deliverables": episode["deliverables"],
+            "structured_artifacts": episode["structured_artifacts"],
+            "reference_contract": [r for r in episode.get("reference_contract", []) if r["input_id"] in visible_ids],
+            "human_checkpoints": episode.get("human_checkpoints", []),
+            "inputs": [i for i in episode["inputs"] if i["id"] in visible_ids
+                       or i.get("availability") == "intentionally_missing"],
+            "edit_parameters": [{k: v for k, v in p.items() if k != "verification"}
+                                for p in episode.get("edit_parameters", [])],
+            "initial_project_state": episode.get("project_state"),
+        }
+    return request, files
 
 
-def prepare(data, track, identifier, destination):
+def prepare(data, track, identifier, destination, complete=False):
     destination = Path(destination).resolve()
     if destination.exists():
         raise ValueError("Output already exists; use a new directory to avoid mixing runs")
@@ -46,7 +62,7 @@ def prepare(data, track, identifier, destination):
     else:
         raise ValueError("Do not write candidate runs into the frozen dataset")
     # Validate identifiers and all source hashes before writing any output.
-    request, files = build_request(data, track, identifier)
+    request, files = build_request(data, track, identifier, complete=complete)
     for source, relative in files:
         target = contained(destination, relative)
         target.parent.mkdir(parents=True, exist_ok=True)

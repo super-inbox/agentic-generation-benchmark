@@ -1,5 +1,13 @@
 # Reproduction coverage
 
+## New runnable evaluations (toolkit v0.2)
+
+The [run guide](RUNNING.md) supplies all-task input listing, complete candidate export, a subprocess adapter,
+multi-turn design/RFQ execution, Gemini API judgments and JSON/CSV summaries. All 43 public design conditions
+and 40 RFQ scenarios have bundled inputs. Online design inspection needs `requirements-eval.txt`; calls need
+an evaluator key, and candidate execution needs the team's agent and tools. This is a new protocol, not a
+reconstruction of historical provider prompts or execution environments.
+
 ## Supported offline
 
 Python 3.10+ and the repository checkout are sufficient. There are no Python package dependencies, credentials, private filesystem paths or model calls in the consumption commands.
@@ -37,7 +45,7 @@ The export retains candidate/customer utterances and the original routing/disclo
 
 ## What is not reproduced
 
-- **Online model behavior:** provider-specific candidate/router/auditor runners, accounts and sampling environments are not supplied. Replacing those settings creates a new experiment.
+- **Historical online behavior:** the new portable runner does not recreate historical provider environments, system wrappers or sampling. Its documented router/auditor and feedback schedule define a new experiment.
 - **Original design judgments:** output artifacts and complete judge payloads are not in this new data release. Numeric archive summaries are inspectable, but a fresh semantic rejudge needs the missing evidence.
 - **Broader archive tasks:** routing, preference, 21q and planning groups have numeric metadata only here. Their counts must not be advertised as fully executable public design briefs. The separately preserved VIR archive has its own content and protocol.
 - **Expert acceptance:** there is no completed human study or validated automatic acceptance score. R1 is a model pilot, with pending expert adjudication.

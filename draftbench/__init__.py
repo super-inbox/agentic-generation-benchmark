@@ -1,3 +1,3 @@
-"""DRAFT-Bench open data tools. Python standard library only."""
+"""DRAFT-Bench toolkit. Offline replay remains Python standard library only."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

@@ -12,7 +12,11 @@ For an evaluation runner:
 4. Test structural facts and semantic obligations separately. Missing files, unchanged content, incorrect edits and unmet prerequisites require different evidence.
 5. Record completion, unobserved quality, justified clarification and professional acceptance separately. A model judgment or file-presence check is not an expert acceptance label.
 
-The new `prepare` tool implements step 1 as an initial input projection. It does not schedule feedback, enforce OS isolation, run candidates or implement the original judge. Full authored episode contracts are supplied for researchers implementing those steps.
+`prepare` exports the original first-turn projection; `prepare --complete` adds public deliverables and constraints.
+Toolkit v0.2 supplies a separate portable runner and provisional API evaluator, documented in [RUNNING.md](RUNNING.md).
+Its scripted feedback follows each completed adapter turn, and its judge sees public replies as well as submitted files.
+Those choices define a new protocol; the historical settings below describe archived evidence, not the new runner.
+Neither input projection nor a subprocess cwd creates OS isolation.
 
 ### Historical design settings
 
@@ -40,10 +44,10 @@ Independently annotated, literal dialogue evidence determines when each componen
 
 There is no composite score. A final summary is diagnostic only and cannot backfill earlier evidence. Simulator mistakes and agent failures remain in the denominator; approved infrastructure exclusions have null metrics. Incomplete annotations are an error, not a zero. Uncertain labels produce provisional bounds.
 
-The reference arithmetic and worked examples are in `draftbench/rfq/`. [Role prompts](RFQ_ROLE_PROMPTS.md) describe the candidate/router/renderer/annotator boundaries. No online semantic router or annotator is automatically provided by the CLI.
+The reference arithmetic and worked examples are in `draftbench/rfq/`. [Role prompts](RFQ_ROLE_PROMPTS.md) describe the candidate/router/renderer/annotator boundaries. Toolkit v0.2 includes an online Gemini router and a separate evidence-auditor call, with fixed authored customer replies. These new auxiliary-model settings are distinct from the archived experiments.
 
 ## R1 and human calibration
 
 R1 is a separate seven-pair historical Sol/Astra rejudging pilot with fourteen Gemini calls, two opposite anonymous presentations per pair, and revised task-specific rules. Original aggregates remain unchanged. Three pairs vary between presentations; rule changes, evidence handling and random/order effects are not separately isolated. Final expert adjudication remains pending.
 
-The proposed `acceptance-record` schema supports future requirement-level audits. It has no claimed expert labels or automatic pass/fail implementation in this release. Selected disagreement cases can develop criteria; a separate blind sample is needed to estimate evaluator error rates.
+The proposed `acceptance-record` schema supports future expert audits. The new API evaluator supplies provisional requirement verdicts in its own evaluation-result format; it does not populate expert labels or establish accepted delivery. Selected disagreement cases can develop criteria; a separate blind sample is needed to estimate evaluator error rates.
